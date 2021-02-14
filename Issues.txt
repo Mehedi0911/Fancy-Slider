@@ -1,0 +1,11 @@
+Fundamental Tasks
+
+issue 1: Photos are not showing up
+issue 2: Slider is not created
+issue 3: No minus value in the timer field
+issue 4: Add enter button to show picture
+issue 5: Set toggle for image clicked
+
+For Bonus Mark
+
+=> Add any two elements or section
