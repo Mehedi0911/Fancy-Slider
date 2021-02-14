@@ -55,7 +55,15 @@ img {
   display: none;
 }
 
-
+.tags{
+  background-color: rgb(240, 240, 240);
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: 10px;
+}
+.tags span{
+  color: lightsalmon;
+}
 
 .result h5 span{
   color: lightsalmon;
