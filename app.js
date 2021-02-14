@@ -35,7 +35,7 @@ const showImages = (images) => {
 
 const getImages = (query) => {
     const url = `https://pixabay.com/api/?key=${KEY}=${query}&image_type=photo&pretty=true`
-    
+    console.log(url);
     fetch(url)
     .then(response => response.json())
     .then(data => showImages(data.hits))
@@ -53,8 +53,11 @@ const selectItem = (event, img) => {
   let item = sliders.indexOf(img);
   if (item === -1) {
     sliders.push(img);
+  }else{
+    sliders.splice(item);
   }
-  
+
+
 }
 var timer
 const createSlider = () => {
