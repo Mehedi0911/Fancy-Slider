@@ -32,13 +32,14 @@ const showImages = (images) => {
     div.innerHTML = ` <img class="img-fluid img-thumbnail" onclick=selectItem(event,"${image.webformatURL}") src="${image.webformatURL}" alt="${image.tags}">
     <h6 class = "tags"><span>Tags :</span> ${image.tags}</h6>`;
     gallery.appendChild(div);
+    
   })
 
 }
 
 const getImages = (query) => {
     const url = `https://pixabay.com/api/?key=${KEY}=${query}&image_type=photo&pretty=true`
-    console.log(url);
+    
     fetch(url)
     .then(response => response.json())
     .then(data => showImages(data.hits))
@@ -160,3 +161,4 @@ searchBtn.addEventListener("click", function(e) {
 sliderBtn.addEventListener('click', function () {
  createSlider();  
 })
+
