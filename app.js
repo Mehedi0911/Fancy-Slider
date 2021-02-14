@@ -5,6 +5,8 @@ const searchBtn = document.getElementById('search-btn');
 const sliderBtn = document.getElementById('create-slider');
 const sliderContainer = document.getElementById('sliders');
 const searchResult = document.getElementById("search-result");
+const searchResultHeading = document.querySelector('.result');
+searchResultHeading.style.display = 'none'
 // selected image 
 let sliders = [];
 
@@ -61,6 +63,7 @@ const selectItem = (event, img) => {
 }
 var timer
 const createSlider = () => {
+  searchResultHeading.style.display ='none';
   // check slider image length
   if (sliders.length < 2) {
     alert('Select at least 2 image.')
@@ -79,7 +82,7 @@ const createSlider = () => {
   document.querySelector('.main').style.display = 'block';
   // hide image aria
   imagesArea.style.display = 'none';
-  const duration = document.getElementById('duration').value || 1000;
+  const duration = Math.abs(document.getElementById('duration').value) || 1000;
   sliders.forEach(slide => {
     let item = document.createElement('div')
     item.className = "slider-item";
@@ -135,6 +138,7 @@ search.addEventListener("keyup", function(e){
     getImages(search.value);
     console.log(search.value);
     sliders.length = 0;
+    searchResultHeading.style.display ='block';
     
   }
 })
@@ -148,16 +152,10 @@ searchBtn.addEventListener("click", function(e) {
     getImages(search.value);
     console.log(search.value);
     sliders.length = 0;  
+    searchResultHeading.style.display ='block';
   
 })
 
 sliderBtn.addEventListener('click', function () {
-  const duration = document.getElementById('duration').value || 1000;
-  if(duration >0){
-    createSlider();
-  }else{
-    alert('Duration Can not be Negative');
-  }
-  
-  
+ createSlider();  
 })
